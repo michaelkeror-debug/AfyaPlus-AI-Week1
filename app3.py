@@ -13,7 +13,7 @@ local_client = OpenAI(
     api_key="ollama")
 
 
-
+#function to generate fallback response from cloud or local model
 
 def generate_fallback(patient_message):
     try:
@@ -83,7 +83,7 @@ FALLBACKS = {
     "rate_limit": FALLBACK_RATE_LIMIT,
     "api_error":  FALLBACK_API_ERROR,}
 
-
+#function to get AI response with retry logic and fallback handling
 
 def get_ai_response( patient_message, max_retries=3):
     last_error = "api_error"
@@ -111,6 +111,9 @@ test_messages = [
 ]
 for msg in test_messages:
     print(f"Patient: {msg}")
+
+    #PROMPT IMPLEMENTING ROLE BASED VARIATION, CHAIN OF THOUGHTS, DEFENSIVE GUARDRAILS, LANGUAGE INSTRUCTIONS AND JSON STRUCTURED OUTPUT 
+    #VARIATION WAS IMPLEMENTED IN THE SYSTEM PROMPT BELOW
 extraction_prompt = """
 You are a defensive, backend administrative data extraction engine for AfyaPlus Health.
 
@@ -147,7 +150,7 @@ CRITICAL INSTRUCTIONS:
     
 response = get_ai_response(msg)
 
-
+#structured JSON output handling
 try:
         if json.loads(response).get("is_critical_emergency"):
                     print(f"Symptoms:{json.loads(response)['detect_symptoms']}")
