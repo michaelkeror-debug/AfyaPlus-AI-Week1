@@ -1,0 +1,26 @@
+app.py
+async_calls.py
+challenge14_custom_fallback.py
+tokenisation_lab.py
+temp_experiment.py
+sync_calls.py
+structured_extraction.py
+streaming_response.py
+role_cot_lab.py
+prompt_iteration.py
+prediction_lab.py
+model_comparison.py
+local_inference.py
+first_api_call.py
+few_shot_urgency.py
+defensive_gateway.py
+comparison.md
+challenger2_embedding.py
+challenge8_confidence.PY
+challenge7_four_categories.py
+challenge4_loader.py
+challenge1_tokeniser.py
+app2
+verify_key.py
+verify
+python embeddings_lab.py
