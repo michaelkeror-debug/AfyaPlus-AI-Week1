@@ -48,7 +48,7 @@ def generate_fallback(patient_message):
                     ],
                     temperature= 0.0,
                     response_format={"type": "json_object"},
-
+#Timeout set to 120 seconds for local model inference   due to potential longer processing times, may vary based on machine
                     timeout =120
                      )
                      print(f"Cloud failure..switching to Ollama")
